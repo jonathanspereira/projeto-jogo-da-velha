@@ -17,7 +17,7 @@ In tic-tac-toe, two players alternate between placing their marks, usually "X" a
 - Restart when clicking the button after one of the players wins.
 
 ## 🕹️ How to Play
-1. Access the link [TIC Tac Toe]()
+1. Access the link [TIC Tac Toe](https://jonathanspereira.github.io/projeto-jogo-da-velha/)
 
 2. Two players must alternate between clicking on empty cells on the board to place their marks ("X" or "O").
 
