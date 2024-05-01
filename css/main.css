@@ -1,75 +1,86 @@
+:root {
+  --primary-color: rgb(13, 2, 170);
+  --secondary-color: rgb(4, 1, 42);
+  --black-color:rgba(0, 0, 0, 0.916);
+  --white-color: rgb(255, 255, 255);
+  --circle-and-x-color:rgb(67, 54, 247);
+  --circle-and-x-hover-color:rgba(6, 3, 45, 0.548);
+}
+
+
+
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
 }
 
 body{
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(90deg,
-    rgb(4, 1, 42) 0%,
-    rgb(0, 0, 0) 100%);
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg,
+  var(--primary-color) 0%,
+  var(--secondary-color) 100%);
 }
 
 /*Tabuleiro*/
 .board{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3,auto);
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3,auto);
 }
 
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.x .cell:not(.x):not(.cell.circle):hover::before,
 .board.circle .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.cell.circle):hover::before {
-    background-color: rgba(12, 10, 51, 0.655) !important;
+  background-color: var(--circle-and-x-hover-color) !important;
 }
 
 /*Celulas*/
 .cell{
-    width: 100px;
-    height: 100px;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .cell.x, 
 .cell.circle{
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .cell:nth-child(1),
 .cell:nth-child(2),
 .cell:nth-child(3){
-    border-top: none;
+  border-top: none;
 }
 
 .cell:nth-child(1),
 .cell:nth-child(4),
 .cell:nth-child(7){
-    border-left: none;
+  border-left: none;
 }
 
 .cell:nth-child(7),
 .cell:nth-child(8),
 .cell:nth-child(9){
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .cell:nth-child(3),
 .cell:nth-child(6),
 .cell:nth-child(9){
-    border-right: none;
+  border-right: none;
 }
 
 /*X*/
@@ -77,21 +88,21 @@ body{
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.x .cell:not(.x):not(.cell.circle):hover::before {
-    content: "";
-    height: calc(100px * 0.15);
-    width: calc(100px * 0.8);
-    background-color: rgb(144, 137, 250); 
-    position: absolute;
+  content: "";
+  height: calc(100px * 0.15);
+  width: calc(100px * 0.8);
+  background-color:  var(--circle-and-x-color); 
+  position: absolute;
 }
 
 .cell.x::before,
 .board.x .cell:hover::before{
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .cell.x::after,
 .board.x .cell:hover::after{
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /*Circle*/
@@ -99,31 +110,31 @@ body{
 .cell.circle::after,
 .board.cell.circle .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.cell.circle):hover::before{
-    content: "";
-    height: calc(100px * 0.8);
-    width: calc(100px * 0.8);
-    background-color: rgb(144, 137, 250);
-    position: absolute;
-    border-radius: 50%;
+  content: "";
+  height: calc(100px * 0.8);
+  width: calc(100px * 0.8);
+  background-color: var(--circle-and-x-color);
+  position: absolute;
+  border-radius: 50%;
 }
 
 /*Mensagem de vitória*/
 .winning-message{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.971);
-    flex-direction: column;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+  flex-direction: column;
 }
 
 .winning-message-txt{
-    color: white;
-    font-size: 5rem;
+  color: var(--white-color);
+  font-size: 5rem;
 }
 
 
@@ -141,8 +152,8 @@ body{
   background-color: inherit;
   border-radius: 100px;
   font-weight: 600;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 0 0 2px rgb(17, 1, 255);
+  color: var(--white-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -151,7 +162,7 @@ body{
 .winning-message-button svg {
   position: absolute;
   width: 24px;
-  fill: rgb(17, 1, 255);
+  fill: var(--primary-color);
   z-index: 9;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -171,7 +182,7 @@ body{
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: rgb(17, 1, 255);
+  background-color: var(--primary-color);
   border-radius: 50%;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -186,7 +197,7 @@ body{
 
 .winning-message-button:hover {
   box-shadow: 0 0 0 12px transparent;
-  color: #ffffff;
+  color: var(--white-color);
   border-radius: 12px;
 }
 
@@ -203,7 +214,7 @@ body{
 }
 
 .winning-message-button:hover svg {
-  fill: #ffffff;
+  fill: var(--white-color);
 }
 
 .winning-message-button:active {
