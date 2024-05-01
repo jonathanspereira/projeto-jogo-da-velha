@@ -120,7 +120,7 @@ body{
 
 /*Mensagem de vitória*/
 .winning-message{
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -228,3 +228,6 @@ body{
   opacity: 1;
 }
 
+.show-winning-message{
+  display: flex;
+}

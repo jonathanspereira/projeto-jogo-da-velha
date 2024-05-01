@@ -7,9 +7,9 @@
     <title>Jogo da velha</title>
 </head>
 <body>
-    <div class="board x">
-        <div class="cell x" data-cell></div>
-        <div class="cell circle" data-cell=""></div>
+    <div class="board x" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell=""></div>
         <div class="cell" data-cell=""></div>
         <div class="cell" data-cell=""></div>
         <div class="cell" data-cell=""></div>
@@ -20,9 +20,9 @@
     </div>
 
     <div class="winning-message" data-winning-message>
-        <p class="winning-message-txt">X Venceu</p>
+        <p class="winning-message-txt" data-winning-message-text></p>
         
-        <button class="winning-message-button">
+        <button class="winning-message-button" data-restart-button>
             <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
             </svg>
@@ -33,15 +33,13 @@
                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
             </svg>
         </button>
-
-
     </div>
 
     
 
 
 
-   <script src="./script.js"></script>
+   <script src="./scripts.js"></script>
     
 </body>
 </html>
