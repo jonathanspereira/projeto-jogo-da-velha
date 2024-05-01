@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">   
     <title>Jogo da velha</title>
 </head>
 <body>
+    <div class="board x">
+        <div class="cell x" data-cell></div>
+        <div class="cell circle" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+        <div class="cell" data-cell=""></div>
+    </div>
 
-    <section id="tabuleiro">
+    <div class="winning-message" data-winning-message>
+        <p class="winning-message-txt">X Venceu</p>
+        
+        <button class="winning-message-button">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+            <span class="text">Reiniciar</span>
+            <span class="circle"></span>
 
-        <div class="container-tabuleiro">
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+        </button>
 
-            <div id="">
-                <div id="1"></div>
-                <div id="2"></div>
-                <div id="3"></div>
-            </div>
 
-            <div id="">
-                <div id="4"></div>
-                <div id="5"></div>
-                <div id="6"></div>
-            </div>
+    </div>
 
-            <div id="">
-                <div id="7"></div>
-                <div id="8"></div>
-                <div id="9"></div>
-            </div>
-            
-        </div>
+    
 
-    </section>
 
+
+   <script src="./script.js"></script>
     
 </body>
 </html>
