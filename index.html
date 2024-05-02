@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">   
-    <title>Jogo da velha</title>
+    <title>Tic Tac Dev</title>
+
+    <link rel="shortcut icon" href="./images/favicon_tic-tac-dev.png" type="image/x-icon">
 </head>
 <body>
     <div class="start show-start-message" data-start-message>
-        <button class="start-message-button" data-start-button>
-            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
-            <span class="start-text">Iniciar</span>
-            <span class="circle"></span>
+        <p class="start-message-txt">Bem Vindo ao Tic Tac Dev!</p>
 
-            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
+        <button class="start-message-button" data-start-button>
+            <span class="start-text">VAMOS JOGAR</span> 
+            <span class="circle"></span>
     </div>
 
     <div class="board x" data-board>
@@ -32,26 +29,25 @@
         <div class="cell" data-cell=""></div>
     </div>
 
-    <div class="winning-message" data-winning-message>
-        <p class="winning-message-txt" data-winning-message-text></p>
-        
-        <button class="winning-message-button" data-restart-button>
-            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
-            <span class="text">Reiniciar</span>
-            <span class="circle"></span>
-
-            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
-        </button>
+    <div class="scoreboard">
+        <div id="x"><p>X - <span class="x-points">0</span></p></div>
+        <p>vs</p>
+        <div id="o"><p>O - <span class="o-poins">0</span></p></div>
     </div>
 
     
 
+    <div class="winning-message" data-winning-message>
+        <p class="winning-message-txt" data-winning-message-text></p>
+        
+        <button class="winning-message-button" data-restart-button>
 
+            <span class="text">JOGAR NOVAMENTE</span>
+            <span class="circle"></span>
 
+        </button>
+    </div>
+    
    <script src="./scripts.js"></script>
     
 </body>

@@ -3,11 +3,9 @@
   --secondary-color: rgb(4, 1, 42);
   --black-color:rgba(0, 0, 0, 0.916);
   --white-color: rgb(255, 255, 255);
-  --circle-and-x-color:rgb(67, 54, 247);
+  --circle-and-x-color:rgba(250, 250, 250, 0.822);
   --circle-and-x-hover-color:rgba(6, 3, 45, 0.548);
 }
-
-
 
 *{
   box-sizing: border-box;
@@ -24,9 +22,122 @@ body{
   var(--secondary-color) 100%);
 }
 
-/*Tabuleiro*/
+
+
+/*----------Tela de inicio----------*/
+
+/* Mensagem de início */
+.start {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.69); /* para um fundo semi-transparente */
+  z-index: 9999; /* para garantir que fique acima de outros elementos */
+  visibility: visible; /* inicialmente invisível */
+}
+
+.start-message-txt{
+  position: fixed;
+  color: var(--white-color);
+  font-size: 4rem;
+  padding-bottom: 30rem;
+}
+
+/*Botão de iniciar*/
+.start-message-button {
+  position: relative;.start-text:hover{
+    color: var(--white-color) !important;
+  }
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--white-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.start-message-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.start-message-button .start-text {
+  position: relative;
+  z-index: 99;
+}
+
+.start-message-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--primary-color);
+  border-radius: 12px;
+  z-index: 999;
+}
+
+.start-message-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 9px ;
+}
+
+.start-message-button:hover .circle {
+  width: 250px;
+  height: 250px;
+  opacity: 1;
+}
+
+.show-start-message{
+  display: flex;
+}
+
+/*----------Placar----------*/
+
+.scoreboard{
+  display: flex;
+  position: absolute;
+  margin-top: 5rem;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--white-color);
+  width: min(95%, 200px);
+  max-width: 100%;
+  width: 100%;
+}
+
+.scoreboard p{
+  padding: 2rem;
+}
+
+
+/*----------Tabuleiro----------*/
 .board{
   display: grid;
+  position: absolute;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -34,6 +145,7 @@ body{
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3,auto);
+
 }
 
 .board.x .cell:not(.x):not(.circle):hover::after,
@@ -118,33 +230,7 @@ body{
   border-radius: 50%;
 }
 
-/* Mensagem de início */
-.start {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* para um fundo semi-transparente */
-  z-index: 9999; /* para garantir que fique acima de outros elementos */
-  visibility: visible; /* inicialmente invisível */
-}
-
-.start.show {
-  visibility: visible; /* torna visível quando adicionada a classe "show" */
-}
-
-.start-message-button {
-  position: absolute;
-  top:40vh; /* centraliza verticalmente */
-  left: 50%; /* centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* corrige o posicionamento */
-  /* o restante do seu estilo para o botão de início... */
-}
-
+/*----------Tela de reinicio----------*/
 
 /*Mensagem de vitória*/
 .winning-message{
@@ -164,101 +250,6 @@ body{
   color: var(--white-color);
   font-size: 5rem;
 }
-
-/*Botão de iniciar*/
-.start-message-button {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 16px 36px;
-  margin-top: 5rem;
-  border: 4px solid;
-  border-color: transparent;
-  font-size: 16px;
-  background-color: inherit;
-  border-radius: 100px;
-  font-weight: 600;
-  color: var(--white-color);
-  box-shadow: 0 0 0 2px var(--primary-color);
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.start-message-button svg {
-  position: absolute;
-  width: 24px;
-  fill: var(--primary-color);
-  z-index: 9;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.start-message-button .arr-1 {
-  right: 16px;
-}
-
-.start-message-button .arr-2 {
-  left: -25%;
-}
-
-.start-message-button .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.start-message-button .text {
-  position: absolute;
-  z-index: 1;
-  transform: translateX(-12px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.start-message-button:hover {
-  box-shadow: 0 0 0 12px transparent;
-  color: var(--white-color);
-  border-radius: 12px;
-}
-
-.start-message-button:hover .arr-1 {
-  right: -25%;
-}
-
-.start-message-button:hover .arr-2 {
-  left: 16px;
-}
-
-.start-message-button:hover .text {
-  transform: translateX(12px);
-}
-
-.start-message-button:hover svg {
-  fill: var(--white-color);
-}
-
-.start-message-button:active {
-  scale: 0.95;
-  box-shadow: 0 0 0 4px ;
-}
-
-.start-message-button:hover .circle {
-  width: 220px;
-  height: 220px;
-  opacity: 1;
-}
-
-.show-start-message{
-  display: flex;
-}
-
 
 /*Botão de reiniciar*/
 .winning-message-button {
@@ -281,22 +272,6 @@ body{
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.winning-message-button svg {
-  position: absolute;
-  width: 24px;
-  fill: var(--primary-color);
-  z-index: 9;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.winning-message-button .arr-1 {
-  right: 16px;
-}
-
-.winning-message-button .arr-2 {
-  left: -25%;
-}
-
 .winning-message-button .circle {
   position: absolute;
   top: 50%;
@@ -304,7 +279,7 @@ body{
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: var(--primary-color);
+  background-color: var(--white-color);
   border-radius: 50%;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -313,40 +288,22 @@ body{
 .winning-message-button .text {
   position: relative;
   z-index: 1;
-  transform: translateX(-12px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/**/
 .winning-message-button:hover {
   box-shadow: 0 0 0 12px transparent;
-  color: var(--white-color);
+  color: var(--primary-color);
   border-radius: 12px;
-}
-
-.winning-message-button:hover .arr-1 {
-  right: -25%;
-}
-
-.winning-message-button:hover .arr-2 {
-  left: 16px;
-}
-
-.winning-message-button:hover .text {
-  transform: translateX(12px);
-}
-
-.winning-message-button:hover svg {
-  fill: var(--white-color);
 }
 
 .winning-message-button:active {
   scale: 0.95;
-  box-shadow: 0 0 0 4px ;
+  box-shadow: 0 0 0 9px ;
 }
 
 .winning-message-button:hover .circle {
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   opacity: 1;
 }
 
