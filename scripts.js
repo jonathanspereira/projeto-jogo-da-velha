@@ -18,6 +18,28 @@ const winningCombinations = [
   [2, 4, 8],
 ]
 
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("O JavaScript está sendo executado.");
+
+  var startButton = document.querySelector('[data-start-button]');
+  var startDiv = document.querySelector('.start');
+
+  // Verifica se a mensagem de início já foi exibida
+  var startMessageShown = sessionStorage.getItem('startMessageShown');
+  console.log("A mensagem de início foi exibida anteriormente? " + startMessageShown);
+  
+  if (!startMessageShown) {
+      console.log("Exibindo a mensagem de início.");
+      startDiv.style.display = 'block'; // mostra a mensagem de início
+  }
+
+  startButton.addEventListener('click', function() {
+      console.log("Botão de iniciar clicado.");
+      startDiv.style.display = 'none'; // esconde a mensagem de início ao clicar no botão
+      sessionStorage.setItem('startMessageShown', true); // salva que a mensagem de início foi exibida
+      // Aqui você pode adicionar o código para iniciar o jogo da velha
+  });
+});
 const startGame = () => {
   isCircleTurn = false;
 
