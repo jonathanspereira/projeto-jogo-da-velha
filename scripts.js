@@ -131,3 +131,11 @@ const handleClick = (e) => {
 startGame();
 
 restartButtton.addEventListener('click', startGame);
+
+document.addEventListener('DOMContentLoaded', function() {
+  var startDiv = document.querySelector('.start');
+  startDiv.style.display = 'flex'; // Força o elemento a ser exibido como flexível
+  startDiv.style.flexDirection = 'column'; // Define a direção da flexbox como coluna para posicionar o texto acima do botão
+  startDiv.style.justifyContent = 'center'; // Centraliza verticalmente os elementos
+  startDiv.style.alignItems = 'center'; // Centraliza horizontalmente os elementos
+});
