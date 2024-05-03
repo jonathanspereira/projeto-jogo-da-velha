@@ -23,12 +23,11 @@ body{
 }
 
 
-
 /*----------Tela de inicio----------*/
 
 /* Mensagem de início */
 .start {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -42,11 +41,10 @@ body{
 }
 
 .start-message-txt {
-  margin-bottom: 10%;
   color: var(--white-color);
   font-size: 4rem;
-  text-align: center; /* Centraliza horizontalmente */
-  padding-bottom: 1%;
+  text-align: center;
+  position: relative;
 }
 
 /*Botão de iniciar*/
@@ -66,12 +64,9 @@ body{
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  position: absolute;
-  bottom: 45%; 
-  left: 50%; 
-  transform: translateX(-50%);
-}
+  position: relative;
 
+}
 
 .start-text:hover{
   color: var(--blue-color) !important;
