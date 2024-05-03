@@ -46,6 +46,7 @@ body{
   color: var(--white-color);
   font-size: 4rem;
   text-align: center; /* Centraliza horizontalmente */
+  padding-bottom: 1%;
 }
 
 /*Botão de iniciar*/
@@ -114,7 +115,7 @@ body{
 }
 
 .show-start-message{
-  display: flex;
+  display: flex;  
 }
 
 /*----------Placar----------*/
