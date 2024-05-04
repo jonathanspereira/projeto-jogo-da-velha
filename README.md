@@ -13,8 +13,8 @@ In tic-tac-toe, two players alternate between placing their marks, usually "X" a
 ## 🎮 Features
 
 - Tic-tac-toe for two players.
-- Change board color with victory.
-- Restart when clicking the button after one of the players wins.
+- Players' points scoreboard.
+- Restart by clicking the button after one of the players wins.
 
 ## 🕹️ How to Play
 1. Access the link [TIC Tac Toe](https://jonathanspereira.github.io/projeto-jogo-da-velha/)
