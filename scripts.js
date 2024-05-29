@@ -4,6 +4,7 @@ const winningMessageTextElement = document.querySelector("[data-winning-message-
 
 const winningMessage = document.querySelector("[data-winning-message]");
 const restartButtton = document.querySelector("[data-restart-button]");
+const newgame = document.querySelector("[data-newgame-button");
 
 const xpoint = document.querySelector("[data-x-points]");
 const opoint = document.querySelector("[data-o-points]");
@@ -56,6 +57,21 @@ const startGame = () => {
 
   setBoardHoverClass();
   winningMessage.classList.remove('show-winning-message');
+};
+
+const newGame = () => {
+  isCircleTurn = false;
+
+  for (const cell of cellElements){
+    cell.classList.remove('circle');
+    cell.classList.remove('x');
+    cell.removeEventListener("click", handleClick)
+    cell.addEventListener("click", handleClick, { once:true});
+  }
+  
+  xpoint.innerText = 0; 
+  opoint.innerText = 0; 
+  
 };
 
 const endGame = (isDraw) => {
@@ -137,6 +153,8 @@ const handleClick = (e) => {
 
 startGame();
 
+
+newgame.addEventListener('click', newGame);
 restartButtton.addEventListener('click', startGame);
 
 document.addEventListener('DOMContentLoaded', function() {

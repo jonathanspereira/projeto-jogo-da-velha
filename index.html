@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="./images/favicon_tic-tac-dev.png" type="image/x-icon">
 </head>
 <body>
+
     <div class="start show-start-message" data-start-message>
         <p class="start-message-txt">Bem Vindo ao <br> Tic Tac Dev!</p>
 
@@ -17,23 +18,39 @@
             <span class="circle"></span>
     </div>
 
-    <div class="board x" data-board>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-        <div class="cell" data-cell=""></div>
-    </div>
+    <section class="principal">
 
-    <div class="scoreboard">
-        <div><p>X - <span data-x-points>0</span></p></div>
-        <p>vs</p>
-        <div><p>O - <span data-o-points>0</span></p></div>
-    </div>
+        <div class="scoreboard">
+            <div><p>X - <span data-x-points>0</span></p></div>
+            <p>vs</p>
+            <div><p>O - <span data-o-points>0</span></p></div>
+        </div>
+
+        <div class="board x" data-board>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+            <div class="cell" data-cell=""></div>
+        </div>
+
+        <div class="newgame-message" data-newgame-message>
+            <p class="newgame-message-txt" data-newgame-message-text></p>
+            
+            <button class="newgame-message-button" data-newgame-button>
+    
+                <span class="text">Novo Jogo</span>
+                <span class="circle"></span>
+    
+            </button>
+        </div>
+
+
+    </section>
 
     <div class="winning-message" data-winning-message>
         <p class="winning-message-txt" data-winning-message-text></p>
